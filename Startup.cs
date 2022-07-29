@@ -53,9 +53,9 @@ namespace Shop{
                 };
             });
 
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
 
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             //services.AddScoped<DataContext>();    
             
@@ -68,12 +68,12 @@ namespace Shop{
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // if(env.IsDevelopment())
-            // {
+             if(env.IsDevelopment())
+             {
                 app.UseDeveloperExceptionPage();
-            //     app.UseSwagger();
-            //     app.UseSwaggerUI();
-            // }
+                 app.UseSwagger();
+                 app.UseSwaggerUI();
+             }
             
             //Vai forçar que nossa api só aceite HTTPS, é muito importante pra evitar requisições inseguras
             app.UseHttpsRedirection();
