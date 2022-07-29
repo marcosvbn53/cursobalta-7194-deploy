@@ -1,0 +1,12 @@
+*.suo
+*.user
+*.userosscacahe
+*.sln.docstates
+
+*.userprefs
+
+[Db]ebug/
+[Db]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
